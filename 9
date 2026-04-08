@@ -1,0 +1,28 @@
+.do same as 16 with addition of one file Jenkinfiles
+.add the code
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t java-calc-app .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                bat 'docker run  java-calc-app'
+            }
+        }
+
+    }
+}
+
+.push it to GitHub
+
+.open Jenkins select pipeline
+.select git in SCM
+.paste the repository url
+.save apply
