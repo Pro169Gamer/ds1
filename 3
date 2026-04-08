@@ -1,0 +1,9 @@
+. push the 12th prg files on GitHub with pom
+. go to Jenkins slect freestylejob
+.select git in source
+.paste url change in main
+
+.add build steps :-invoke top level maven target
+.select default or Maven , in goals:- clean install
+.post build action:-target/surefire-reports/*.xml
+.build apply
