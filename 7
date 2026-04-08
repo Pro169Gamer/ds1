@@ -1,0 +1,28 @@
+open cmd
+>>docker run -d nginx
+>>docker run -d -p 8084:80 nginx
+>>docker volume create myvolume
+>>docker volume ls
+>>docker run -it -v myvolume:/data ubuntu bash
+
+enter-
+	#>>cd /data
+	#>>echo " volume test" > test.txt
+	#>>exit
+  
+>>docker run -it -v myvolume:/data ubuntu bash
+
+ enter-
+	#>>cat /data/test.txt
+	#>>exit
+  
+>>docker run -d -p 8087:80 -v myvolume:/usr/share/nginx/html nginx
+>>docker run -it -v myvolume:/data ubuntu bash
+
+ enter-
+	#>>echo "<h1>persistent web page<h1>" > /data/index.html
+	#>>exit
+  
+>>docker ps
+>>docker volume ls
+>>docker volume inspect myvolume
