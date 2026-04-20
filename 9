@@ -1,5 +1,9 @@
-.do same as 16 with addition of one file Jenkinfiles
-.add the code
+>>create folder-> dockerfile,calulator.java
+>> create repo and upload above files
+>>jenkins -> freestyle ->git->
+>>batch command ->docker build -t java-app ->docker build -d -t java-app
+->build it 
+
 pipeline {
     agent any
 
@@ -19,10 +23,3 @@ pipeline {
 
     }
 }
-
-.push it to GitHub
-
-.open Jenkins select pipeline
-.select git in SCM
-.paste the repository url
-.save apply
